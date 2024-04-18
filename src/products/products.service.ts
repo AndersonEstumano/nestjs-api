@@ -12,7 +12,8 @@ export class ProductsService {
   ) {}
 
   create(createProductDto: CreateProductDto) {
-    return 'This action adds a new product';
+    const product = this.productRepository.create(createProductDto)
+    return this.productRepository.save(product);
   }
 
   findAll() {
